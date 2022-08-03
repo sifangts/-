@@ -1,0 +1,19 @@
+/** 常用色值 **/
+/** 常用字体大小 **/
+.container {
+  display: flex;
+}
+.container .nav-left {
+  background: #001529;
+  width: 15%;
+  min-width: 180px;
+  height: calc(100vh);
+}
+.container .main {
+  height: calc(100vh);
+  background-color: #f1f3f5;
+}
+.container .content {
+  position: relative;
+  padding: 20px;
+}

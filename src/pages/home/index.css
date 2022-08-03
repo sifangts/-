@@ -1,0 +1,11 @@
+/** 常用色值 **/
+/** 常用字体大小 **/
+.home-wrap {
+  background-color: #fff;
+  height: calc(65vh);
+  width: calc(180vh);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
