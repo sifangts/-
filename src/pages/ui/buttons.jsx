@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Card,Button,Radio} from 'antd'
-import {SearchOutlined,DownloadOutlined,LeftOutlined,RightOutlined} from '@ant-design/icons'
+import {SearchOutlined,DownloadOutlined,LeftOutlined,RightOutlined,EditOutlined,DeleteOutlined,PlusOutlined} from '@ant-design/icons'
 import './ui.css'
 export default class Buttons extends Component {
     state={
@@ -28,9 +28,9 @@ export default class Buttons extends Component {
                     <Button disabled>Imooc</Button>
                 </Card>
                 <Card title='图形按钮' className='card-wrap'>
-                    <Button icon='plus'>创建</Button>
-                    <Button icon='edit'>编辑</Button>
-                    <Button icon='delete'>删除</Button>
+                    <Button icon={<PlusOutlined />}>创建</Button>
+                    <Button icon={<EditOutlined />}>编辑</Button>
+                    <Button icon={<DeleteOutlined />}>删除</Button>
                     <Button shape='circle' icon={<SearchOutlined />}></Button>
                     <Button type='primary' icon={<SearchOutlined />}>搜索</Button>
                     <Button type='primary' icon={<DownloadOutlined />}>下载</Button>

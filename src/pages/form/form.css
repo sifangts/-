@@ -1,0 +1,10 @@
+.button1 {
+  width: calc(300vh);
+  touch-action: pan-y;
+}
+.button1 .Button2 {
+  text-align: center;
+}
+.button1 .Button2 .Button {
+  width: 150px;
+}

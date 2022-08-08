@@ -13,7 +13,10 @@ import Message from './pages/ui/message';
 import Tabs from './pages/ui/tab'
 import Gallery from './pages/ui/gallery';
 import Carousels from './pages/ui/carousel';
-import FormLogin from './pages/form/login'
+import FormLogin from './pages/form/login';
+import Register from './pages/form/register'
+import BasicTable from './pages/table/basicTable';
+import HighTable from './pages/table/highTable';
 export default class IRouter extends Component {
     render() {
         return (
@@ -32,7 +35,10 @@ export default class IRouter extends Component {
                                 <Route path='/admin/ui/tabs' component={Tabs} />
                                 <Route path='/admin/ui/gallery' component={Gallery} />
                                 <Route path='/admin/ui/carousel' component={Carousels} />
-                                <Route path='/admin/form' component={FormLogin} />
+                                <Route path='/admin/form/login' component={FormLogin} />
+                                <Route path='/admin/form/reg' component={Register} />
+                                <Route path='/admin/table/basic' component={BasicTable} />
+                                <Route path='/admin/table/high' component={HighTable} />
                                 <Route component={NoMatch} />
                             </Switch>
                         </Admin>

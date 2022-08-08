@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Card,Tabs, message} from 'antd'
 import {PlusOutlined,EditOutlined,DeleteOutlined} from '@ant-design/icons'
 import './ui.css'
-import { Content } from 'antd/lib/layout/layout';
+// import { Content } from 'antd/lib/layout/layout';
 const {TabPane} =Tabs;
 export default class Message extends Component {
     newTabIndex=0;
