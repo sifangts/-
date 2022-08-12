@@ -1,12 +1,12 @@
-.logo {
+.nav-left .logo {
   line-height: 90px;
   padding: 20px;
   background: #001529;
 }
-.logo img {
+.nav-left .logo img {
   height: 35px;
 }
-.logo h1 {
+.nav-left .logo h1 {
   color: #ffffff;
   font-size: 20px;
   display: inline-block;

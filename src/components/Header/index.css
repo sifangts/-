@@ -9,8 +9,22 @@
   padding: 0 20px;
   text-align: right;
 }
+.header .header-top .logo {
+  line-height: 60px;
+  text-align: center;
+  font-size: 18px;
+  margin-left: 0px;
+}
+.header .header-top .logo img {
+  height: 40px;
+  vertical-align: middle;
+}
+.header .header-top .logo span {
+  margin-left: 5px;
+}
 .header .header-top a {
   margin-left: 40px;
+  color: #f9c700;
 }
 .header .breadcrumb {
   height: 40px;
@@ -37,4 +51,8 @@
 }
 .header .breadcrumb .weather .date {
   margin-right: 10px;
+}
+.simple-page .header-top {
+  background-color: #1890ff;
+  color: #fff;
 }

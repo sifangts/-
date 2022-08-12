@@ -19,15 +19,26 @@ export default class Header extends Component {
         }, 1000);
     }
     render() {
+        const menuType=this.props.menuType;
         return (
             <div className='header'>
                 <Row className='header-top'>
-                    <Col span={24}>
+                    {
+                        menuType?(
+                        <Col span={6} className="logo">
+                           <img src="/assets/logo-ant.svg" alt="" />
+                           <span>IMooc 通用管理系统</span>
+                        </Col>):''
+                    }
+                    
+                    <Col span={menuType?18:24}>
                         <span>欢迎,{this.state.userName}</span>
                         <a href="/#">退出</a>
                     </Col>
                 </Row>
-                <Row className='breadcrumb'>
+                {
+                    menuType?'':
+                    <Row className='breadcrumb'>
                     <Col span={4} className='breadcrumb-title'>
                         首页
                     </Col>
@@ -36,6 +47,8 @@ export default class Header extends Component {
                         <span className='weather-detail'>晴</span>
                     </Col>
                 </Row>
+                }
+                
             </div>
         )
     }

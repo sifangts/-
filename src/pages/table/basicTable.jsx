@@ -68,7 +68,7 @@ export default class BasicTable extends Component {
             url: '/table/list',
             data: {
                 params: {
-                    page: 1
+                    page: this.params.page
                 }
             }
         }).then((res) => {
