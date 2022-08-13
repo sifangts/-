@@ -55,7 +55,7 @@ export default {
       this.setState({
         selectedRowKeys,
         selectedItem,  //选中的那一行
-        selectedIds
+        selectedIds,
       })
     }else{
       this.setState({
@@ -63,5 +63,4 @@ export default {
         selectedItem  //选中的那一行
       })
     }
-  }
-}
+  }}

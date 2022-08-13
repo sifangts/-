@@ -21,7 +21,7 @@ export default class Axios{
         })
         _this.setState({
           dataSource,
-          // selectedRowKeys:[],
+          selectedRowKeys:[],
           pagination: Utils.pagination(res, current => {
             _this.params.page = current;
             _this.requestList()

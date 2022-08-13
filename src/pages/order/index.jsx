@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
-import { Card, Button, Table, Form,  Modal, message } from 'antd'
+import { Card, Button, Form,  Modal, message } from 'antd'
 import axios from './../../axios/index'
-// import Utils from './../../utils/utils'
+import Utils from './../../utils/utils'
 import BaseForm from './../../components/BaseForm'
+import ETable from './../../components/ETable'
 import './order.less'
+
 
 // const { Option } = Select;
 export default class Order extends Component {
     state = {
+        selectedRowKeys: [],
         dataSource: [],
         orderConfirmVisible:false,
         orderInfo:[]
@@ -116,14 +119,14 @@ export default class Order extends Component {
             }
         })
     }
-    onRowClick=(record,index)=>{
-        let selectKey=[index];
+    // onRowClick=(record,index)=>{
+    //     let selectKey=[index];
         
-        this.setState({
-            selectedRowKeys:selectKey, //选中当前行的key值
-            selectedItem:record  //选中当前行信息
-        })
-    }
+    //     this.setState({
+    //         selectedRowKeys:selectKey, //选中当前行的key值
+    //         selectedItem:record  //选中当前行信息
+    //     })
+    // }
     openOrderDetail=()=>{
         let item=this.state.selectedItem;
         if(!item){
@@ -139,7 +142,7 @@ export default class Order extends Component {
         this.requestList()
     }
     render() {
-        const { dataSource, pagination,orderConfirmVisible } = this.state;
+        const { dataSource, selectedIds,pagination,orderConfirmVisible,selectedRowKeys,selectedItem } = this.state;
         const columns = [
             {
                 title: '订单编号',
@@ -198,9 +201,11 @@ export default class Order extends Component {
                 span:19
             }
         }
-        const rowSelection={
-            type:"radio"
-        }
+        // const selectedRowKeys=this.state.selectedRowKeys;
+        // const rowSelection={
+        //     type:"radio"
+        //selectionRowKeys
+        // }
         return (
             <div className='button1'>
                 <Card>
@@ -211,7 +216,17 @@ export default class Order extends Component {
                     <Button type='primary' style={{marginLeft:30}} onClick={this.handleFinish}>结束订单</Button>
                 </Card>
                 <div className='content-wrap'>
-                    <Table
+                <ETable
+                  updateSelectedItem={Utils.updateSelectedItem.bind(this)}
+                  columns={columns}
+                  dataSource={dataSource}
+                  pagination={pagination}
+                  selectedRowKeys = {selectedRowKeys}
+                  selectedIds={selectedIds}
+                  selectedItem={selectedItem}
+                //   rowSelection='checkbox'
+        />
+                    {/* <Table
                         bordered
                         columns={columns}
                         dataSource={dataSource}
@@ -224,7 +239,7 @@ export default class Order extends Component {
                                 },  //点击行
                             }
                         }}
-                    />
+                    /> */}
                 </div>
                 <Modal
                 title='结束订单'

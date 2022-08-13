@@ -61,8 +61,8 @@ export default class BaseForm extends Component {
                     </FormItem>
                     formItemList.push(CHECKBOX)
                 }else if (item.type === "DATE") {
-                    const DATE = <Form.Item label={label} key={field} >
-                      <DatePicker format='YYYY-MM-DD HH:mm:ss' placeholder='选择结束时间' style={{ width: width }}/>
+                    const DATE = <Form.Item label={label} name={field}  key={field} initialValue={initialValue}>
+                      <DatePicker format='YYYY-MM-DD HH:mm:ss' placeholder={placeholder} style={{ width: width }}/>
                     </Form.Item>
                     formItemList.push(DATE);}
             })
