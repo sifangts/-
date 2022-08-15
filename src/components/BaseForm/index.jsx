@@ -22,7 +22,17 @@ export default class BaseForm extends Component {
                 let width = item.width;
                 let initialValue = item.initialValue || '';
                 let placeholder = item.placeholder;
-                if(item.type==='时间查询'){
+                 if (item.type === '城市') {
+                    const city = <FormItem label='城市' name={field} key={field} initialValue='0'>
+                        <Select
+                            placeholder='全部'
+                            style={{ width: 100 }}
+                        >
+                            {Utils.getOptionList([{id:'0',name:'北京'},{id:'1',name:'天津'},{id:'2',name:'上海'},{id:'2',name:'杭州'}])}
+                        </Select>
+                    </FormItem>
+                    formItemList.push(city)
+                }else if(item.type==='时间查询'){
                     const begin_time=<FormItem label="订单时间" name="start_time" >
                         <DatePicker format='YYYY-MM-DD HH:mm:ss'  placeholder='选择开始时间' style={{width:width}}/>
                     </FormItem>

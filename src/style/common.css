@@ -65,3 +65,15 @@ li {
   position: relative;
   padding: 20px;
 }
+.content-wrap {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  margin-top: -3px;
+}
+.content-wrap .ant-table-wrapper {
+  margin-left: 1px;
+  margin-right: -2px;
+}
+.operate-wrap button {
+  margin-left: 10px;
+}

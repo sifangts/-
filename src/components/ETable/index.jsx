@@ -42,7 +42,9 @@ export default class ETable extends Component {
             type: "radio",
             selectedRowKeys,
             // onChange:this.onSelectChange
-        }
+        }        
+        console.log('rowSelection',rowSelection)
+
         if (row_selection === false || row_selection === null) {
             row_selection = false;
         } else if (row_selection === "checkbox") {
