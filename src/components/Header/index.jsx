@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
+import axios from './../../axios/index'
 // import Utils from './../../utils/utils'
 import { connect } from 'react-redux'
 import moment from 'moment'
@@ -18,7 +19,24 @@ class Header extends Component {
                 sysTime
             })
         }, 1000);
+        this.getWeatherAPIData();
     }
+    getWeatherAPIData() {
+        // let city = "北京"${encodeURIComponent(city)}
+        axios.jsonp({
+          url: `https://www.yiketianqi.com/free/day?appid=94387368&appsecret=CIRT6Gtk&unescape=1&city=北京`
+        }).then(res => {
+          if (res) {
+            console.log(res)
+            let city = res.city;
+            let wea = res.wea;
+            this.setState({
+              city,
+              wea,
+            })
+          }
+        })
+      }
     render() {
         const menuType=this.props.menuType;
         return (
@@ -45,7 +63,8 @@ class Header extends Component {
                     </Col>
                     <Col span={20} className='weather'>
                         <span className='date'>{this.state.sysTime}</span>
-                        <span className='weather-detail'>晴</span>
+                        <span className='weather-detail'>
+                            {this.state.city} {this.state.wea}</span>
                     </Col>
                 </Row>
                 }
