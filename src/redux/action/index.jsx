@@ -1,12 +1,18 @@
-// Action类型
+// // Action类型
 
-export const type={
-    SWITCH_MENU:'SWITCH_MENU'
-}
+// export const type={
+//     SWITCH_MENU:'SWITCH_MENU'
+// }
 
-export function switchMenu(menuName){
+// export function switchMenu(menuName){
+//     return {
+//         type:type.SWITCH_MENU,
+//         menuName
+//     }
+// }
+export function switchMenu(menuName) {
     return {
-        type:type.SWITCH_MENU,
-        menuName
+      type: "SWITCH_MENU",
+      menuName
     }
-}
+  }

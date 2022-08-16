@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import Router from './router'
 // import 'default-passive-events'
-
+import {Provider} from 'react-redux'
+import { store } from './redux/store';
 // import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
 
-  <Router/> ,
+  <Provider store={store}>
+    <Router/>
+  </Provider>   ,
 document.getElementById('root')
 )
 

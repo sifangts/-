@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 // import Utils from './../../utils/utils'
+import { connect } from 'react-redux'
 import moment from 'moment'
 import './index.css'
 // import utils from '../../utils/utils'
-export default class Header extends Component {
+class Header extends Component {
     state = {}
     UNSAFE_componentWillMount(){
         this.setState({
@@ -40,7 +41,7 @@ export default class Header extends Component {
                     menuType?'':
                     <Row className='breadcrumb'>
                     <Col span={4} className='breadcrumb-title'>
-                        首页
+                        {this.props.menuName}
                     </Col>
                     <Col span={20} className='weather'>
                         <span className='date'>{this.state.sysTime}</span>
@@ -53,3 +54,9 @@ export default class Header extends Component {
         )
     }
 }
+const mapStateToprops=state=>{
+    return{
+        menuName:state.menuName
+    }
+}
+export default connect(mapStateToprops)(Header)
